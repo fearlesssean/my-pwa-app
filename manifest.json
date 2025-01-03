@@ -2,7 +2,7 @@
     "name": "Simple PWA",
     "short_name": "PWA",
     "description": "A simple progressive web app example.",
-    "start_url": "/",
+    "start_url": "/index",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
