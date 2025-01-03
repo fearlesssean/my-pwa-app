@@ -7,7 +7,6 @@
     <title>Simple PWA</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icons/icon-192x192.png" sizes="192x192">
-    <script src="service-worker.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,5 +27,18 @@
     <div class="content">
         <button onclick="alert('You clicked the button!')">Click Me!</button>
     </div>
+
+    <!-- Register the service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/my-pwa-app/service-worker.js', { scope: '/my-pwa-app/' })
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
 </body>
 </html>
